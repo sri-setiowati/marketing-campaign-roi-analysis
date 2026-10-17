@@ -2,6 +2,10 @@
 
 > **Simulated case study.** Glowina Skincare is a fictional brand and every row in `data/raw/` is synthetic. The tables were produced with a seeded Python script. No real company data is used.
 
+## Recommendation in brief
+
+Twelve awareness-type campaigns hold 37% of spend and return 0.40x on net revenue, against 2.57x for everything else. Moving half of that budget (about IDR 259 million) into proven performance campaigns for one quarter is worth an estimated +IDR 313 million of net revenue, with a range of +IDR 127 million to +IDR 433 million. Brand search and retargeting are left out as receivers, and a holdout region measures what awareness campaigns cause that last-click attribution does not credit. The full reasoning is in [docs/business_recommendations.md](docs/business_recommendations.md).
+
 ## The business question
 
 Glowina Skincare is an imaginary direct-to-consumer skincare brand that sells online in Indonesia. Between January and September 2026 it spent roughly IDR 1.4 billion on ads across Meta, TikTok, Google and influencer campaigns. Blended return on ad spend looks acceptable at first glance, but the cost of acquiring a customer went up in the third quarter.
@@ -34,11 +38,11 @@ The files are messy on purpose, the way real platform exports are. Problems incl
 | 1. Build the dataset and data dictionary | Python | Done |
 | 2. Clean the raw tables and log every fix | Python (pandas) | Done |
 | 3. Calculate CTR, CPC, CVR, CAC, ROAS and LTV | SQL | Done |
-| 4. Test the findings and size the budget shift | Python | Next |
-| 5. Build the dashboard | Looker Studio | Not started |
-| 6. Write recommendations with estimated revenue impact | Markdown | Not started |
+| 4. Test the findings and size the budget shift | Python | Done |
+| 5. Write recommendations with estimated revenue impact | Markdown | Done |
+| 6. Build the dashboard | Looker Studio | Next |
 
-Results and the dashboard link will be added here as each step is finished.
+The dashboard link will be added here when it is published.
 
 ## Cleaning results
 
@@ -70,6 +74,8 @@ The queries are in `sql/` and are run, with commentary, in [notebooks/02_sql_met
 - Conversion rate on double dates (2.47%) is about 1.7 times a regular weekday (1.44%), while spend barely moves.
 - Two account problems show up in the data: a day with spend 7.2 times a campaign's average, and four days with spend and no conversions.
 
+Notebook 03 tests how far these findings can be trusted. Google and Meta beat TikTok clearly, but Google against Meta and TikTok against Influencer are too close to call. The weak group is better defined by design than by outcome: the 12 awareness-type campaigns return 0.40x (interval 0.34x to 0.46x). Conversion rate falls inside campaigns by about 3% of its own average per month, and the blended rate also dips when awareness-type campaigns take a large share of clicks.
+
 ## Run it yourself
 
 ```
@@ -77,7 +83,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-Run `notebooks/01_data_cleaning.ipynb` first, then `notebooks/02_sql_metrics.ipynb`, each from top to bottom. Notebook 01 reads `data/raw/` and writes `data/clean/` and `docs/cleaning_log.md`. Notebook 02 reads `data/clean/` and `sql/` and writes `data/analytics/`.
+Run the three notebooks in `notebooks/` in order, each from top to bottom. Notebook 01 reads `data/raw/` and writes `data/clean/` and `docs/cleaning_log.md`. Notebook 02 reads `data/clean/` and `sql/` and writes `data/analytics/`. Notebook 03 reads both and writes `docs/figures/`.
 
 ## Repository layout
 
@@ -86,13 +92,16 @@ Run `notebooks/01_data_cleaning.ipynb` first, then `notebooks/02_sql_metrics.ipy
 ├── data/
 │   ├── raw/            messy source tables
 │   ├── clean/          output of notebook 01
-│   └── analytics/      result tables from the SQL queries, used by the dashboard
+│   └── analytics/      result tables from the SQL queries and the budget scenarios
 ├── docs/
+│   ├── business_recommendations.md
+│   ├── cleaning_log.md
 │   ├── data_dictionary.md
-│   └── cleaning_log.md
+│   └── figures/        charts from notebook 03
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb
-│   └── 02_sql_metrics.ipynb
+│   ├── 02_sql_metrics.ipynb
+│   └── 03_statistical_checks.ipynb
 ├── sql/                numbered query files with the question each one answers
 ├── requirements.txt
 └── README.md
