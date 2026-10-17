@@ -1,0 +1,21 @@
+channel,payment_method,orders,cancelled_pct,returned_pct,lost_revenue_idr
+Google Ads,COD,255,12.9,2.4,13339000
+Google Ads,QRIS,635,3.3,2.4,12009000
+Google Ads,E-Wallet,665,2.9,1.7,9993000
+Google Ads,Credit Card,552,2.7,3.1,10043000
+Google Ads,Virtual Account,804,2.6,2.7,12680000
+Influencer,COD,204,15.2,1.5,9291000
+Influencer,E-Wallet,245,4.1,2.0,3962000
+Influencer,Credit Card,83,2.4,4.8,1468000
+Influencer,QRIS,171,1.8,2.9,1899000
+Influencer,Virtual Account,187,1.1,4.3,3289000
+Meta Ads,COD,791,12.5,3.0,37484000
+Meta Ads,QRIS,758,3.8,1.8,12854000
+Meta Ads,E-Wallet,894,3.1,2.2,14551000
+Meta Ads,Virtual Account,969,2.9,2.5,16128000
+Meta Ads,Credit Card,373,1.9,3.2,5600000
+TikTok Ads,COD,603,16.3,2.2,23118000
+TikTok Ads,QRIS,269,3.0,3.3,3772000
+TikTok Ads,E-Wallet,536,2.4,2.4,6047000
+TikTok Ads,Credit Card,84,2.4,2.4,1422000
+TikTok Ads,Virtual Account,247,2.0,2.8,2296000

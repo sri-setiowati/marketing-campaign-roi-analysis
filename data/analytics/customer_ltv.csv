@@ -1,0 +1,5 @@
+channel,customers,orders_per_customer,repeat_rate_pct,ltv_idr,cac_idr,ltv_to_cac
+Google Ads,1106,2.48,77.1,704125.0,134560.0,5.23
+Meta Ads,821,2.14,69.7,588886.0,172845.0,3.41
+TikTok Ads,604,1.96,63.7,466051.0,171445.0,2.72
+Influencer,416,2.57,77.4,688125.0,368195.0,1.87

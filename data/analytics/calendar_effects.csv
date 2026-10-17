@@ -1,0 +1,5 @@
+day_type,campaign_days,cvr_pct,avg_spend_per_campaign_day,avg_conversions_per_campaign_day
+Double date,78,2.47,701447.0,7.6
+Payday window,660,1.7,545405.0,4.13
+Regular weekday,1240,1.44,584917.0,3.39
+Weekend,474,1.58,585470.0,3.8
