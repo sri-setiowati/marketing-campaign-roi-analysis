@@ -40,9 +40,9 @@ The files are messy on purpose, the way real platform exports are. Problems incl
 | 3. Calculate CTR, CPC, CVR, CAC, ROAS and LTV | SQL | Done |
 | 4. Test the findings and size the budget shift | Python | Done |
 | 5. Write recommendations with estimated revenue impact | Markdown | Done |
-| 6. Build the dashboard | Looker Studio | Next |
+| 6. Build the dashboard | Looker Studio | Done |
 
-The dashboard link will be added here when it is published.
+[Looker Studio Dashboard](https://datastudio.google.com/reporting/a6d2988e-6e88-4a59-aaf9-3e28fb1f6ebd)
 
 ## Cleaning results
 
